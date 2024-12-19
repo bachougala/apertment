@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flats Best Offers</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* General styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-color: #f4f4f9;
+}
+
+header {
+  background-color: #0078d4;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+#offers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.offer-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  max-width: 300px;
+  text-align: center;
+}
+
+.offer-card h2 {
+  color: #0078d4;
+}
+
+.offer-card p {
+  margin: 10px 0;
+  color: #333;
+}
+
+.offer-card span {
+  font-size: 1.2em;
+  color: #0078d4;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background: #333;
+  color: #fff;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Flats Best Offers</h1>
+    <p>Discover the best offers on flats, updated monthly!</p>
+  </header>
+
+  <main>
+    <section id="offers">
+      <!-- Offers will be dynamically loaded here -->
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 FlatsBestDeals.com</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Array of offers
+// Array of offers for all 12 months in Indian Rupees
+const offers = [
+  { month: "January", price: "₹30,000", description: "2BHK in city center" },
+  { month: "February", price: "₹28,000", description: "1BHK near the metro" },
+  { month: "March", price: "₹32,000", description: "3BHK with garden view" },
+  { month: "April", price: "₹35,000", description: "Luxury flat with amenities" },
+  { month: "May", price: "₹29,000", description: "2BHK near the park" },
+  { month: "June", price: "₹27,500", description: "Studio apartment in a prime area" },
+  { month: "July", price: "₹31,000", description: "3BHK with swimming pool access" },
+  { month: "August", price: "₹30,500", description: "2BHK with balcony" },
+  { month: "September", price: "₹33,000", description: "1BHK with modern interiors" },
+  { month: "October", price: "₹36,000", description: "Penthouse with city view" },
+  { month: "November", price: "₹28,500", description: "1BHK near IT hub" },
+  { month: "December", price: "₹34,000", description: "3BHK in a gated community" },
+];
+
+// Function to load offers
+function loadOffers() {
+  const offersSection = document.getElementById('offers');
+
+  offers.forEach(offer => {
+    const offerCard = document.createElement('div');
+    offerCard.classList.add('offer-card');
+
+    offerCard.innerHTML = `
+      <h2>${offer.month}</h2>
+      <p>${offer.description}</p>
+      <span>${offer.price}/month</span>
+    `;
+
+    offersSection.appendChild(offerCard);
+  });
+}
+
+// Load offers on page load
+window.onload = loadOffers;
+
+
+  </script>
+</body>
+</html>
